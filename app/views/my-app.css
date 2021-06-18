@@ -1,0 +1,41 @@
+body{
+  font-family: sans-serif;
+  max-width:600px;
+  margin-top:32px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.TodoPageMain{
+  display:flex;
+}
+
+.SplashImage{
+  max-width: 300px;
+}
+
+.TodoPage-title{
+  font-size: 48px;
+  line-height: 1.6;
+  color:darkcyan;
+}
+
+.TodoSection-title{
+  font-size:34px;
+  line-height: 1.4;
+  color:#453C52;
+}
+
+.TodoSection-todo{
+  font-size:20px;
+  line-height: 1.2;
+  margin-left:32px;
+  color:#453C52;
+}
+
+.TodoSection {
+  margin-bottom: 32px;
+  margin-left:32px;
+  padding:32px;
+}
