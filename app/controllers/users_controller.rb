@@ -14,9 +14,9 @@ class UsersController < ApplicationController
   def create
     name = params[:name]
     email = params[:email]
-    pswd = params[:password]
+    password = params[:password]
     valid_input = name.present? && email.present? && password.present?
-    user = valid_input ? User.create!(name: name, email: email, password: pswd) : nil
+    user = valid_input ? User.create!(name: name, email: email, password: password) : nil
     response_text = user.present? ? "Hey, your account is created with id #{user.id}" : "Input can't be empty!! "
     render plain: response_text
   end
