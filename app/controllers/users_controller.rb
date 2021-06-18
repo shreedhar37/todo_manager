@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    record = User.find_by("email = ?  and pswd = ?", params[:email], params[:pswd])
+    record = User.find_by(email: params[:email], password: params[:password])
     result = record ? "Welcome #{record.name}" : "Invalid Credentials!!!"
     render plain: result
   end
@@ -14,11 +14,10 @@ class UsersController < ApplicationController
   def create
     name = params[:name]
     email = params[:email]
-    pswd = params[:pswd]
-
-    input = (name == nil || email == nil || pswd == nil) ? nil : User.create!(name: name, email: email, pswd: pswd)
-    response_text = input == nil ? "Input can't be empty!! " : "Hey, your account is created with id #{input.id}"
-    #response_text = "Hey, your account is created with id #{new_user.id}"
+    pswd = params[:password]
+    valid_input = name.present? && email.present? && password.present?
+    user = valid_input ? User.create!(name: name, email: email, password: pswd) : nil
+    response_text = user.present? ? "Hey, your account is created with id #{user.id}" : "Input can't be empty!! "
     render plain: response_text
   end
 end
