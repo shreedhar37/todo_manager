@@ -1,0 +1,122 @@
+body{
+  font-family: Open Sans,sans-serif;
+  max-width:460px;
+  margin:0 auto;
+  margin-top:60px;
+}
+
+.TodoPageMain{
+  font-family: Open Sans,sans-serif;
+  line-height: 1;
+}
+.TodoPage-title{
+  font-size: 20px;
+  color: #453C52;
+  margin-top:60px;
+  margin-bottom:12px;
+   font-weight: 600;
+  line-height: 1.6;
+}
+
+.AddTodo{
+  display: flex;
+  height:32px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+.AddTodo-text
+{
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #452352;
+  margin-right: 10px;
+  border-radius: 4px;
+  border:1px solid #BFB8CC;
+}
+
+.AddTodo-date{
+  padding: 6px;
+  font-size: 14px;
+  color: #452352;
+  margin-right: 10px;
+  border-radius: 4px;
+  border:1px solid #BFB8CC;
+
+}
+
+.AddTodo-button{
+  font-size: 14px;
+  color:white;
+  background-color: #48BB78;
+  border:1px solid transparent;
+  padding: 6px 22px;
+  border-radius: 4px;
+}
+
+.TodoSection{
+  margin-bottom: 20px;
+  display:block;
+}
+
+.TodoSectionTitle{
+  display:flex;
+  color:#452352;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.TodoSectionTitle-text{
+  font-size:14px;
+  line-height: 1.4;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.TodoSectionTitle-remainingCount{
+  font-size: 12px;
+  margin-left:8px;
+  color: #453C52;
+}
+
+.TodoItem{
+  font-size: 14px;
+  margin-left: 8px;
+  margin-bottom: 6px;
+  color:#452352
+}
+
+.TodoItem-container{
+  display:inline-flex;
+  padding : 2px 8px;
+  align-items: center;
+}
+
+.TodoItem-checkbox{
+  width: 21px;
+  height: 16px;
+}
+
+.TodoItem-overdueLabel{
+  margin-left: 10px;
+  color:#C53030;
+  font-size:12px;
+  display:inline;
+}
+
+.TodoItem-container:hover {
+  background-color: #F1EDF7;
+}
+
+
+.TodoItem-delete{
+  visibility: hidden;
+  font-size:15.2px;
+  border-radius:5px;
+  border:1px solid transparent;
+  margin-left:8px;
+}
+
+
+.TodoItem-container:hover  .TodoItem-delete:hover{
+  visibility: visible;
+}
