@@ -103,11 +103,6 @@ body{
   display:inline;
 }
 
-.TodoItem-container:hover {
-  background-color: #F1EDF7;
-}
-
-
 .TodoItem-delete{
   visibility: hidden;
   font-size:15.2px;
@@ -117,6 +112,14 @@ body{
 }
 
 
-.TodoItem-container:hover  .TodoItem-delete:hover{
+.TodoItem-container:hover {
+  background-color: #F1EDF7;
+}
+
+.TodoItem-delete > img{
+  width:16px;
+}
+
+.TodoItem-container:hover  .TodoItem-delete{
   visibility: visible;
 }
