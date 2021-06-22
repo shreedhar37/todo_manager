@@ -7,8 +7,7 @@
   <% todos.order(:due_date).map  do |todo| %>
       <li class="TodoItem">
             <% if section_title == "Overdue" %>
-                    <% if todo.completed %>
-                    <% else %>
+                    <% if !todo.completed %>
                         <label class="TodoItem-container">
                         <input class="TodoItem-checkbox" type="checkbox"  >
                         <span class="TodoItem-todoText" >
