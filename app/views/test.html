@@ -5,24 +5,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Todo Management App</title>
+  <!-- Below stylesheet is used for trash button -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="my-app.css">
-  <title>Our Todo Management App</title>
 </head>
 
 <body>
   <main class="TodoPageMain">
-    <img class="SplashImage" src="side-image.jpg" />
     <article>
       <h1 class="TodoPage-title">My Todo-list</h1>
-      <section class="TodoSection">
-        <h2 class="TodoSection-title">Due Today</h2>
-        <p class="TodoSection-todo">Submit SaaS 201 project</p>
-        <p class="TodoSection-todo">Call Accountant</p>
+      <section class="AddTodo">
+        <input class="AddTodo-text" type="text" placeholder="What's next ?">
+        <input class="AddTodo-date" type="date">
+        <input class="AddTodo-button" type="button" value="Add">
       </section>
+
       <section class="TodoSection">
-        <h2 class="TodoSection-title">Due Tomorrow</h2>
-        <p class="TodoSection-todo">Refill groceries</p>
+        <div class="TodoSectionTitle">
+          <p class="TodoSectionTitle-text">Due Today</p>
+          <p class="TodoSectionTitle-remainingCount">0/4</p>
+        </div>
+        <ul>
+          <li class="TodoItem">
+            <label class="TodoItem-container">
+              <input class="TodoItem-checkbox" type="checkbox">
+              Submit Saas 201 Project
+              <p class="TodoItem-overdueLabel">Overdue</p>
+              <button class="TodoItem-delete"><i class="fa fa-trash-o"></i></button>
+          </li>
+          <li class=" TodoItem">
+            <label class="TodoItem-container">
+              <input class="TodoItem-checkbox" type="checkbox">
+              Call accountant
+          </li>
+        </ul>
       </section>
     </article>
   </main>
