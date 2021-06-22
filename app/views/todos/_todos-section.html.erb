@@ -4,17 +4,42 @@
     <p class="TodoSectionTitle-remainingCount"> <%= todos.completed.count %> / <%= todos.count %></p>
   </div>
   <ul>
-  <% todos.each  do |todo| %>
+  <% todos.order(:due_date).each  do |todo| %>
       <li class="TodoItem">
-          <label class="TodoItem-container">
-          <input class="TodoItem-checkbox" type="checkbox">
-            <%= todo.todo_text %>
+            <% if section_title == "Overdue" %>
+                    <% if todo.completed %>
+                    <% next %>
+                    <% else %>
+                        <label class="TodoItem-container">
+                        <input class="TodoItem-checkbox" type="checkbox"  >
+                        <span class="TodoItem-todoText" >
+                              <%= todo.todo_text %>
+                        </span>
+                        <p class="TodoItem-dueDate">
+                                <%= todo.due_date.to_s(:short) %>
+                        </p>
+                        <button class="TodoItem-delete"><i class="fa fa-trash-o"></i></button>
+                      <% end %>
 
-            <% if show_due_date %>
-              <p class="TodoItem-dueDate"> <%= todo.due_date.to_s(:short) %> </p>
+            <% else %>
+                  <label class="TodoItem-container">
+                    <% if todo.completed  %>
+                        <input class="TodoItem-checkbox" type="checkbox"  checked  >
+                        <span class="TodoItem-todoText" style="text-decoration: line-through">
+                              <%= todo.todo_text %>
+                        </span>
+
+                    <% else %>
+                        <input class="TodoItem-checkbox" type="checkbox" >
+                        <span class="TodoItem-todoText"><%= todo.todo_text %></span>
+                    <% if  show_due_date  %>
+                        <p class="TodoItem-dueDate"> <%= todo.due_date.to_s(:short) %> </p>
+                    <% end %>
+
+                    <% end%>
+                        <button class="TodoItem-delete"><i class="fa fa-trash-o"></i></button>
             <% end %>
 
-          <button class="TodoItem-delete"><i class="fa fa-trash-o"></i></button>
       </li>
   <% end %>
     </ul>

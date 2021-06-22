@@ -109,9 +109,6 @@ body{
   background-color: #F1EDF7;
 }
 
-.TodoItem-delete > img{
-  width:16px;
-}
 
 .TodoItem-container:hover  .TodoItem-delete{
   visibility: visible;
