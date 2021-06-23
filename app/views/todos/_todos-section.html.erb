@@ -18,11 +18,10 @@
           %>
           <% end %>
 
-          <%= content_tag( :span, nil,
+          <%= content_tag( :span,todo.todo_text ,
                                                 class: todo.completed ?  "TodoItem-completedText"  :  ""
                                               )
           %>
-            <%= todo.todo_text %>
 
           <% if  show_due_date  %>
             <%= content_tag( :p, nil, class:'TodoItem-dueDate') %>
