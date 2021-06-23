@@ -10,7 +10,7 @@ class Todo < ActiveRecord::Base
   def self.overdue
     #Notice that self.overdue is a class method because of the self. prefix.
     #Those methods are not available in individual objects of the class, but on the entire class itself.
-    all.where("due_date < ?", Date.today)
+    where("due_date < ? and (not completed)", Date.today).order(:due_date)
   end
 
   def self.due_today
