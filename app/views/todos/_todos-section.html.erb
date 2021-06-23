@@ -1,34 +1,38 @@
 <section class="TodoSection">
   <div class="TodoSectionTitle">
     <p class="TodoSectionTitle-text"><%= section_title %></p>
-    <p class="TodoSectionTitle-remainingCount"> <%= todos.completed.count %> / <%= todos.count %></p>
+    <p class="TodoSectionTitle-remainingCount">
+      <%= todos.completed.count %> / <%= todos.count %>
+    </p>
   </div>
   <ul>
   <%  todos.order(:due_date).each  do |todo|  %>
     <li class="TodoItem" >
-      <label class="TodoItem-container"  >
-        <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
-          <input class="TodoItem-checkbox"
-                        name = "completed"
-                        type="checkbox"  <%=  todo.completed ?  "checked" :  ""  %>
-                        onclick = "this.form.submit()"
-          >
+      <label class="TodoItem-container" >
+        <%= form_with( url: "/todos/#{todo.id}", method: "put" ) do %>
+          <%=check_box_tag 'completed',
+                                                      '1',
+                                                      checked=todo.completed,
+                                                      class:'TodoItem-checkbox',
+                                                      onclick:'this.form.submit()'
+          %>
           <% end %>
 
-          <span class= ' <%= todo.completed ?  "TodoItem-completedText"  :  " "  %> ' >
+          <%= content_tag( :span, nil,
+                                                class: todo.completed ?  "TodoItem-completedText"  :  ""
+                                              )
+          %>
             <%= todo.todo_text %>
-          </span>
 
           <% if  show_due_date  %>
-            <p class="TodoItem-dueDate">
+            <%= content_tag( :p, nil, class:'TodoItem-dueDate') %>
               <%= todo.due_date.to_s(:short) %>
-            </p>
           <% end %>
 
            <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
-            <button class="TodoItem-delete">
-              <i class="fa fa-trash-o"></i>
-            </button>
+              <%= button_tag( class:'TodoItem-delete') do
+                          content_tag( :i, nil, class: 'fa fa-trash-o' )
+              end %>
             <% end %>
       </li>
   <% end %>
