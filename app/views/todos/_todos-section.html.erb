@@ -25,7 +25,11 @@
             </p>
           <% end %>
 
-          <button class="TodoItem-delete"><i class="fa fa-trash-o"></i></button>
+           <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
+            <button class="TodoItem-delete">
+              <i class="fa fa-trash-o"></i>
+            </button>
+            <% end %>
       </li>
   <% end %>
     </ul>
