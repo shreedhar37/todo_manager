@@ -24,8 +24,11 @@
           %>
 
           <% if  show_due_date  %>
-            <%= content_tag( :p, nil, class:'TodoItem-dueDate') %>
-              <%= todo.due_date.to_s(:short) %>
+            <%= content_tag( :p,
+                                                  todo.due_date.to_s(:short),
+                                                  class:'TodoItem-dueDate'
+                                                  )
+            %>
           <% end %>
 
            <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
