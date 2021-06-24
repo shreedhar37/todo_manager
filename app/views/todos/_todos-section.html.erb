@@ -6,37 +6,26 @@
     </p>
   </div>
   <ul>
-  <%  todos.order(:due_date).each  do |todo|  %>
-    <li class="TodoItem" >
-      <label class="TodoItem-container" >
-        <%= form_with( url: "/todos/#{todo.id}", method: "put" ) do %>
-          <%=check_box_tag 'completed',
-                                                      '1',
-                                                      checked=todo.completed,
-                                                      class:'TodoItem-checkbox',
-                                                      onclick:'this.form.submit()'
-          %>
-          <% end %>
-
-          <%= content_tag( :span,todo.todo_text ,
-                                                class: todo.completed ?  "TodoItem-completedText"  :  ""
-                                              )
-          %>
-
-          <% if  show_due_date  %>
-            <%= content_tag( :p,
-                                                  todo.due_date.to_s(:short),
-                                                  class:'TodoItem-dueDate'
-                                                  )
-            %>
-          <% end %>
-
-           <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
-              <%= button_tag( class:'TodoItem-delete') do
-                          content_tag( :i, nil, class: 'fa fa-trash-o' )
-              end %>
+    <%  todos.order(:due_date).each  do |todo|  %>
+      <li class="TodoItem" >
+        <div  class="TodoItem-container" >
+          <%= form_with( url: "/todos/#{todo.id}", method: "put" ) do %>
+            <%=check_box_tag 'completed', '1', checked=todo.completed, class:'TodoItem-checkbox', onclick:'this.form.submit()' %>
             <% end %>
+
+            <%= content_tag( :span,todo.todo_text , class: todo.completed ?  "TodoItem-completedText"  :  "" ) %>
+
+            <% if  show_due_date  %>
+              <%= content_tag( :p, todo.due_date.to_s(:short), class:'TodoItem-dueDate' ) %>
+            <% end %>
+
+            <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
+                <%= button_tag( class:'TodoItem-delete') do %>
+                  <%= content_tag( :i, nil, class: 'fa fa-trash-o' ) %>
+                <% end %>
+            <% end %>
+        </div >
       </li>
-  <% end %>
-    </ul>
-  </section>
+    <% end %>
+  </ul>
+</section>
