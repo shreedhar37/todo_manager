@@ -1,5 +1,3 @@
 class User < ActiveRecord::Base
-  def to_pleasant_string
-    "#{id}. #{first_name}"
-  end
+  has_many :todos
 end
