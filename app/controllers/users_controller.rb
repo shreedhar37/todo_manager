@@ -1,23 +1,15 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
-  def index
-    render plain: User.order(:id).map { |user| user.to_pleasant_string }.join("\n\n")
-  end
-
-  def login
-    record = User.find_by(email: params[:email], password: params[:password])
-    result = record ? "Welcome #{record.name}" : "Invalid Credentials!!!"
-    render plain: result
+  def new
+    render "users/new"
   end
 
   def create
-    name = params[:name]
-    email = params[:email]
-    password = params[:password]
-    valid_input = name.present? && email.present? && password.present?
-    user = valid_input ? User.create!(name: name, email: email, password: password) : nil
-    response_text = user.present? ? "Hey, your account is created with id #{user.id}" : "Input can't be empty!! "
-    render plain: response_text
+    User.create!(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      # password_digest: digest(params[:password_digest])
+    )
+    redirect_to "/"
   end
 end
