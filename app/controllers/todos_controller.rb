@@ -16,9 +16,9 @@ class TodosController < ApplicationController
     todo_text = params[:todo_text]
     due_date = params[:due_date]
     valid_input = todo_text.present? && due_date.present?
-    user = valid_input ? Todo.create(todo_text: todo_text,
-                                     due_date: due_date,
-                                     completed: false) : nil
+    user = valid_input ? Todo.create!(todo_text: todo_text,
+                                      due_date: due_date,
+                                      completed: false) : nil
     redirect_to todos_path
   end
 

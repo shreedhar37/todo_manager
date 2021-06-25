@@ -10,7 +10,7 @@
       <li class="TodoItem" >
         <div  class="TodoItem-container" >
           <%= form_with( url: "/todos/#{todo.id}", method: "put" ) do %>
-            <%=check_box_tag 'completed', '1', checked=todo.completed, class:'TodoItem-checkbox', onclick:'this.form.submit()' %>
+            <%=check_box_tag 'completed', '1', checked=todo.completed?, class:'TodoItem-checkbox', onclick:'this.form.submit()' %>
             <% end %>
 
             <%= content_tag( :span,todo.todo_text , class: todo.completed ?  "TodoItem-completedText"  :  "" ) %>
