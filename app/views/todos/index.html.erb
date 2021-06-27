@@ -3,14 +3,15 @@
 </head>
 <main class="TodoPageMain">
   <article>
-    <h1 class="TodoPage-title">My Todo-list</h1>
+    <h1 class="TodoPage-title"><%= @current_user.first_name %>'s Todo-list</h1>
       <%= form_with(url: "/todos", method: "post", class: "AddTodo" ) do %>
         <%= text_field_tag("todo_text", '',
                                                   placeholder: "What's Next?",
-                                                  class: "AddTodo-text"
+                                                  class: "AddTodo-text",
+                                                  autofocus: true
                                                   )
         %>
-      <%= date_field_tag("due_date", '', class:"AddTodo-date") %>
+      <%= date_field_tag("due_date", '', class:"AddTodo-date", value: Date.today) %>
       <%= button_tag("Add", type: "submit", class:"AddTodo-button") %>
       <% end %>
 

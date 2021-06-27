@@ -9,8 +9,7 @@
 }
 
 .UserHeader{
-  padding: 10px;
-  background-color: #60FFA2;
+  margin-bottom: 20px;
   font-size: 14px;
   display: flex;
   justify-content:  space-between;
@@ -21,4 +20,24 @@
   margin-top:20px;
   margin-bottom:20px;
   font-size:16px;
+}
+
+.UserHeader-title{
+  color:grey;
+  text-decoration: none;
+}
+.UserHeader-title:hover{
+  color:black;
+}
+
+.UserInfo{
+  display: flex;
+}
+
+.UserFirst-name{
+  margin-right:10px;
+}
+
+.Navbar{
+  color:rgba(233, 225, 225, 0.46);
 }

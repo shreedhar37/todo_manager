@@ -12,10 +12,14 @@
 
   <body>
     <% if @current_user %>
-        <p class="UserHeader">
-            Welcome <%= @current_user.first_name %>
-            <%= link_to "Sign-out", destroy_session_path, method: "delete" , class:"Sign-out" %>
-        </p>
+        <section class="UserHeader">
+            <%= link_to "The Todo Manager", "/", method:"get", class:"UserHeader-title"%>
+            <div class="UserInfo">
+              <p class="UserFirst-name"> <%= @current_user.first_name %> </p>
+              <p><%= link_to "Sign-out", destroy_session_path, method: "delete" , class:"Sign-out" %> </p>
+            </div>
+        </section>
+         <hr class="Navbar">
     <% end %>
 
     <% if flash[:error] %>
