@@ -80,7 +80,7 @@ This command will host your application in <applicationname>.herokuapp.com
 
 It will also add a new remote to your Git configuration, so you can push your code to Heorku.
 
-We are now ready to deploy!
+5.We are now ready to deploy!
 
     $ git push heroku master
 
