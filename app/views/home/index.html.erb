@@ -1,9 +1,11 @@
-<h1 class ="Home-title"> Welcome to Todo-Management-App</h1>
+<p class ="Home-title"> You have to be signed-in to start managing your todos.</p>
 
 <h3 class= "Home-authenticate">
-    If you are new user, <%= link_to "sign-up here", new_user_path %>
+   <p class="Home-authenticate-Message"> New to the todo-manager ? </p>
+   <%= link_to "Sign-up for a new account", new_user_path %>
 </h3>
 
 <h3 class= "Home-authenticate">
-    If you are an existing user, <%= link_to "sign-in here", new_sessions_path %>
+    <p class="Home-authenticate-Message" > Already have an account ? </p>
+    <%= link_to "Sign-in", new_sessions_path %>
 </h3>
