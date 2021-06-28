@@ -21,7 +21,7 @@
 
             <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
                 <%= button_tag( class:'TodoItem-delete') do %>
-                  <%= content_tag( :i, nil, class: 'fa fa-trash-o' ) %>
+                  <%= image_tag('trash.png', class:"TodoItem-delete-button" ) %>
                 <% end %>
             <% end %>
         </div >
