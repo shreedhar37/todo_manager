@@ -62,25 +62,25 @@ Password : sampletest
 To deploy this project run
 
 
-1.Sign up for a Heroku account.
+##### 1. Sign up for a Heroku account.
 
-2.Install the Heroku CLI.
+##### 2. Install the Heroku CLI.
 
-3.Ensure that you are able to login via the command line using
+##### 3. Ensure that you are able to login via the command line using
 
     $ heroku login
 
-4.In the directory that contains your Rails application, run the following command to create a Heroku application. You can set any name you like, as long as it contains only letters, numbers and dashes.
+##### 4. In the directory that contains your Rails application, run the following command to create a Heroku application. You can set any name you like, as long as it contains only letters, numbers and dashes.
 
     $ heroku create <applicationname>
 
 
 
-This command will host your application in <applicationname>.herokuapp.com
+This command will host your application in <applicationname>.herokuapp.com 
 
 It will also add a new remote to your Git configuration, so you can push your code to Heorku.
 
-5.We are now ready to deploy!
+##### 5. We are now ready to deploy!
 
     $ git push heroku master
 
