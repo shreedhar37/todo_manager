@@ -49,13 +49,7 @@ And now you can visit the site with the URL http://localhost:3000
 
 https://github.com/shreedhar37/todo_manager/tree/master/working-snapshots
 
-## Demo
 
-https://shreedhar-todomanager-saas-201.herokuapp.com/
-
-Username : sampletest@gmail.com
-
-Password : sampletest
 
 ## Deployment
 
